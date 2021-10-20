@@ -88,10 +88,6 @@ namespace cis237_assignment_3
                          number);
                 index++;
             }
-            //droids[0] = new ProtocolDroid("Kisses", "Poggers", 420);
-            //droids[1] = new UtilityDroid("Scoobert", "Catkiss", true, true, true);
-            //droids[2] = new JanitorDroid("Rawr", "xd", true, true, true, true, true);
-            //droids[3] = new AstromechDroid("HAHA", "LOL", true, true, true, true, 2);
         }
 
         public void PrintDroids(UserInterface ui, string outputString)
