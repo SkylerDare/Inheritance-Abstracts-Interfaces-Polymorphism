@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Skyler Dare
+//CIS237
+//10/22/21
+using System;
 
 namespace cis237_assignment_3
 {

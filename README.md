@@ -2,7 +2,7 @@
 
 ## Author
 
-
+Skyler Dare
 
 ## Description
 
@@ -129,9 +129,9 @@ It may be beneficial for you to create extra methods within the droid sub classe
 
 ## Outside Resources Used
 
-
+none
 
 ## Known Problems, Issues, And/Or Errors in the Program
 
-
+no known issues.
 

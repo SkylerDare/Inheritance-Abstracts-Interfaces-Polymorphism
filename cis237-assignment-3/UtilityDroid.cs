@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Skyler Dare
+//CIS237
+//10/22/21
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +11,17 @@ namespace cis237_assignment_3
 {
     class UtilityDroid : Droid
     {
+        //*******************************************************
+        // Attributes/Variables/Backing Fields
+        //*******************************************************
         decimal totalCost;
         string hasAddon;
         bool toolbox;
         bool computerConnection;
         bool arm;
-
+        //*******************************************************
+        //Properties
+        //*******************************************************
         public bool Toolbox
         {
             get { return toolbox; }
@@ -47,35 +55,47 @@ namespace cis237_assignment_3
         {
             get { return 350.00m; }
         }
-
+        //*******************************************************
+        //Methods
+        //*******************************************************
+        /// <summary>
+        /// calculates total cost for a Utility Droid, checks to see what addons were selected and adds to total cost
+        /// it also adds the option to a string for output
+        /// </summary>
         public override void CalculateTotalCost()
         {
-            totalCost = 0;
+            TotalCost = 0;
             hasAddon = "";
+            CalculateMaterialCost();
             if (this.Toolbox)
             {
                 hasAddon += "|Toolbox| ";
-                totalCost += 25.00m;
+                TotalCost += 25.00m;
             }
             if (this.ComputerConnection)
             {
                 hasAddon += "|Computer Connection| ";
-                totalCost += 40.00m;
+                TotalCost += 40.00m;
             }
             if (this.Arm)
             {
                 hasAddon += "|Arm| ";
-                totalCost += 30.00m;
+                TotalCost += 30.00m;
             }
-            totalCost += BaseCost;
+            TotalCost += BaseCost + MaterialCost;
             return;
         }
-
+        /// <summary>
+        /// Formats the output string for the print list option
+        /// </summary>
+        /// <returns>formatted output string</returns>
         public override string ToString()
         {
-            return $"{base.ToString()}Addons: {HasAddon} Total Cost: {TotalCost.ToString("C")} ";
+            return $"{base.ToString()}Addons: {HasAddon} Total Cost: |{TotalCost.ToString("C")}| ";
         }
-
+        //*******************************************************
+        //Constructors
+        //*******************************************************
         public UtilityDroid(string Material, string Color, 
                             bool Toolbox, bool ComputerConnection, bool Arm) : 
                             base(Material, Color)

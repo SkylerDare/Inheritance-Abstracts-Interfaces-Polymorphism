@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Skyler Dare
+//CIS237
+//10/22/21
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +11,16 @@ namespace cis237_assignment_3
 {
     class ProtocolDroid : Droid
     {
+        //*******************************************************
+        // Attributes/Variables/Backing Fields
+        //*******************************************************
         int numberLanguages;
         decimal totalCost;
         const decimal COST_PER_LANGUAGE = 55.00m;
-        
 
+        //*******************************************************
+        //Properties
+        //*******************************************************
         public int NumberLanguages
         {
             get { return numberLanguages; }
@@ -25,7 +33,7 @@ namespace cis237_assignment_3
 
         public override decimal BaseCost
         {
-            get { return 500.00m; }
+            get { return 200.00m; }
         }
 
         public override decimal TotalCost
@@ -33,18 +41,28 @@ namespace cis237_assignment_3
             get { return totalCost; }
             set { totalCost = value; }
         }
-
+        //*******************************************************
+        //Methods
+        //*******************************************************
+        /// <summary>
+        /// collectes material cost and then calculates total cost for a protocol droid
+        /// </summary>
         public override void CalculateTotalCost()
         {
-            
-            totalCost += (numberLanguages * COST_PER_LANGUAGE) + BaseCost;
+            CalculateMaterialCost();
+            TotalCost += (numberLanguages * COST_PER_LANGUAGE) + BaseCost + MaterialCost;
         }
-
+        /// <summary>
+        /// Formats the output string for the print list option
+        /// </summary>
+        /// <returns>formatted output string</returns>
         public override string ToString()
         {
-            return $"{base.ToString()}Languages: {NumberLanguages} Total Cost: {TotalCost.ToString("C")} ";
+            return $"{base.ToString()}Languages: |{NumberLanguages}| Total Cost: |{TotalCost.ToString("C")}| ";
         }
-
+        //*******************************************************
+        //Constructors
+        //*******************************************************
         public ProtocolDroid(string Material, string Color, 
                              int NumberLanguages) : 
                              base(Material, Color)
